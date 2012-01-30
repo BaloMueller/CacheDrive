@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,7 +14,6 @@ namespace CacheDrive
     internal class CachingFileSystem : DokanOperations
     {
         private readonly string basePath;
-        Timer timer = new Timer(5000);
         private CacheRepositry cache;
 
         public CachingFileSystem(string basePath)
@@ -21,14 +21,35 @@ namespace CacheDrive
             this.basePath = basePath;
 
             this.cache = new CacheRepositry();
-
-            timer.Elapsed += (sender, e) => this.cache.WriteSummary();
-            timer.Start();
         }
 
         private string Map(string filename)
         {
+            if (filename.Equals("\\"))
+                return basePath;
+
+            string withEnvironmentVar = ReplaceEnvironmentVar(filename);
+            if (!string.IsNullOrEmpty(withEnvironmentVar))
+                return withEnvironmentVar;
+
             return string.Concat(basePath, filename);
+        }
+
+        private string ReplaceEnvironmentVar(string filename)
+        {
+            var environmentVariables = System.Environment.GetEnvironmentVariables();
+            foreach (var pathKey in environmentVariables.Keys)
+            {
+                string pathWithPercent = string.Concat('%', pathKey, '%');
+                if (filename.Contains(pathWithPercent))
+                {
+                    int indexOfVariable = filename.IndexOf(pathWithPercent);
+                    string shortened = filename.Substring(indexOfVariable, filename.Length - indexOfVariable);
+                    return shortened.Replace(pathWithPercent, (string)environmentVariables[pathKey]);
+                }
+            }
+
+            return string.Empty;
         }
 
         public int CreateFile(string filename, System.IO.FileAccess access, FileShare share, FileMode mode, FileOptions options, DokanFileInfo info)
@@ -67,8 +88,6 @@ namespace CacheDrive
             if (!File.Exists(f))
                 return -1;
 
-            this.cache.Add(f);
-            
             using (Stream stream = this.cache.GetStream(f))
             {
                 stream.Seek(offset, SeekOrigin.Begin);
@@ -117,23 +136,39 @@ namespace CacheDrive
         public int GetFileInformation(string filename, FileInformation fileinfo, DokanFileInfo info)
         {
             var f = Map(filename);
-            if (!File.Exists(f))
-                return -1;
+            if (File.Exists(f))
+            {
+                FileInfo fi = new FileInfo(f);
+                fileinfo.Length = fi.Length;
+                fileinfo.Attributes = fi.Attributes;
+                fileinfo.CreationTime = fi.CreationTime;
+                fileinfo.FileName = fi.FullName;
+                fileinfo.LastAccessTime = fi.LastAccessTime;
+                fileinfo.LastWriteTime = fi.LastWriteTime;
+                return 0;
+            }
+            else if(Directory.Exists(f))
+            {
+                info.IsDirectory = true;
 
-            FileInfo fi = new FileInfo(f);
-            fileinfo.Length = fi.Length;
-            fileinfo.Attributes = fi.Attributes;
-            fileinfo.CreationTime = fi.CreationTime;
-            fileinfo.FileName = fi.FullName;
-            fileinfo.LastAccessTime = fi.LastAccessTime;
-            fileinfo.LastWriteTime = fi.LastWriteTime;
+                DirectoryInfo fi = new DirectoryInfo(f);
+                fileinfo.Attributes = fi.Attributes;
+                fileinfo.CreationTime = fi.CreationTime;
+                fileinfo.FileName = fi.FullName;
+                fileinfo.LastAccessTime = fi.LastAccessTime;
+                fileinfo.LastWriteTime = fi.LastWriteTime;
+                return 0; 
+            }
 
-            return 0;
+            return -1;
         }
 
         public int FindFiles(string filename, ArrayList files, DokanFileInfo info)
         {
             var f = Map(filename);
+
+            if (!Directory.Exists(f))
+                return 0;
 
             foreach (var dir in Directory.GetDirectories(f))
             {
@@ -176,10 +211,17 @@ namespace CacheDrive
         public int SetFileTime(string filename, DateTime ctime, DateTime atime, DateTime mtime, DokanFileInfo info)
         {
             string f = Map(filename);
-            File.SetLastAccessTime(f, atime);
-            File.SetCreationTime(f, ctime);
-            File.SetLastWriteTime(f, mtime);
-            return 0;
+            try
+            {
+                File.SetLastAccessTime(f, atime);
+                File.SetCreationTime(f, ctime);
+                File.SetLastWriteTime(f, mtime);
+                return 0;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
 
         public int DeleteFile(string filename, DokanFileInfo info)
@@ -199,6 +241,10 @@ namespace CacheDrive
         public int MoveFile(string filename, string newname, bool replace, DokanFileInfo info)
         {
             string f = Map(filename);
+            newname = Map(newname);
+            if (!File.Exists(f))
+                return -1;
+
             File.Move(f, newname);
             return 0;
         }
@@ -240,37 +286,55 @@ namespace CacheDrive
     internal class CacheRepositry
     {
         Dictionary<string, FileAccess> cacheRepository = new Dictionary<string, FileAccess>();
- 
-        public void Add(string filePath)
-        {
-            if (this.cacheRepository.ContainsKey(filePath))
-                return;
-
-            //if(File.Lenght > X)
-            byte[] data = File.ReadAllBytes(filePath);
-            Console.WriteLine("{0} - Size: {1}", filePath, data.Length);
-            this.cacheRepository.Add(filePath, new FileAccess() { Data = data, LastAccess = DateTime.Now});
-        }
 
         public Stream GetStream(string filePath)
         {
+            RemoveIfChanged(filePath);
+
+            ThreadSafeAdd(filePath);
+
             if (this.cacheRepository.ContainsKey(filePath))
                 return new MemoryStream(this.cacheRepository[filePath].Data);
             else
                 return File.OpenRead(filePath);
         }
 
-        public void WriteSummary()
+        private void RemoveIfChanged(string filePath)
         {
-            //var cacheSummary = from entry in this.cacheRepository
-            //                   group entry by entry.Filename;
+            if (!this.cacheRepository.ContainsKey(filePath))
+                return;
 
-            //int size = Marshal.SizeOf(this.cacheRepository);
-            //Console.WriteLine("\r\nCurrent Caching - Size {0}:", size);
-            //foreach (var file in cacheSummary)
-            //{
-            //    Console.WriteLine(file.Key + file.Count());
-            //}
+            var lastPhysicalWrite = File.GetLastWriteTime(filePath);
+            if (this.cacheRepository[filePath].LastWrite < lastPhysicalWrite)
+            {
+                this.cacheRepository.Remove(filePath);
+                Trace.WriteLine(string.Format("Removed because a newer Version exists: {0}", filePath));
+            }
+        }
+
+        private void ThreadSafeAdd(string filePath)
+        {
+            if (!this.cacheRepository.ContainsKey(filePath))
+            {
+                lock (this.cacheRepository)
+                {
+                    if (!this.cacheRepository.ContainsKey(filePath))
+                        this.Add(filePath);
+                }  
+            }
+        }
+
+        private void Add(string filePath)
+        {
+            if (this.cacheRepository.ContainsKey(filePath))
+                return;
+
+            FileInfo fi = new FileInfo(filePath);
+
+            //if(File.Lenght > X)
+            byte[] data = File.ReadAllBytes(filePath);
+            Trace.WriteLine(String.Format("{0} - Size: {1}", filePath, data.Length));
+            this.cacheRepository.Add(filePath, new FileAccess() { Data = data, LastAccess = DateTime.Now, LastWrite = fi.LastWriteTime});
         }
     }
 
@@ -278,5 +342,6 @@ namespace CacheDrive
     {
         public byte[] Data { get; set; }
         public DateTime LastAccess { get; set; }
+        public DateTime LastWrite { get; set; }
     }
 }
