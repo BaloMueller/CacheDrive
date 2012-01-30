@@ -1,0 +1,5 @@
+C:\repos\dokan\svn\release\dokan-net-0.6.0\DokanNet\bin\x86\Release\DokanNet.dll
+C:\repos\dokan\svn\release\dokan-net-0.6.0\DokanNet\bin\x86\Release\DokanNet.pdb
+C:\repos\dokan\svn\release\dokan-net-0.6.0\DokanNet\obj\x86\Release\ResolveAssemblyReference.cache
+C:\repos\dokan\svn\release\dokan-net-0.6.0\DokanNet\obj\x86\Release\DokanNet.dll
+C:\repos\dokan\svn\release\dokan-net-0.6.0\DokanNet\obj\x86\Release\DokanNet.pdb

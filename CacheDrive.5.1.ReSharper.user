@@ -1,0 +1,214 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="A09B408A-26A0-4FF8-83D5-6E1B1DA5F63C/f:DokanOperations.cs" caret="890" fromTop="29" />
+      <File id="A09B408A-26A0-4FF8-83D5-6E1B1DA5F63C/f:Proxy.cs" caret="12491" fromTop="28" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:Program.cs" caret="657" fromTop="20" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="4101" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="5447" fromTop="48" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:Program.cs" caret="487" fromTop="16" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="3257" fromTop="26" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="3780" fromTop="46" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="3759" fromTop="47" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="2649" fromTop="21" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="2990" fromTop="27" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="1050" fromTop="24" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="1223" fromTop="28" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="1684" fromTop="40" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="1526" fromTop="36" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="4012" fromTop="24" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="3366" fromTop="18" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="3663" fromTop="25" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="794" fromTop="31" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="4352" fromTop="38" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="4542" fromTop="45" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="4735" fromTop="52" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="4944" fromTop="47" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="2756" fromTop="51" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="325" fromTop="15" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="628" fromTop="24" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="794" fromTop="32" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="2011" fromTop="30" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="8915" fromTop="45" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="8408" fromTop="38" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="8828" fromTop="46" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="8315" fromTop="37" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="7954" fromTop="29" />
+      <File id="0F8EEE61-877B-4593-A32D-44E818015C18/f:CachingFileSystem.cs" caret="7789" fromTop="19" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="File`0" priority="11" />
+      <Item value="filename" priority="12" />
+      <Item value="options" priority="0" />
+      <Item value="return" priority="16" />
+      <Item value="Directory`0" priority="3" />
+      <Item value="info" priority="1" />
+      <Item value="new" priority="7" />
+      <Item value="FileInfo`0" priority="1" />
+      <Item value="file" priority="1" />
+      <Item value="f" priority="1" />
+      <Item value="buffer" priority="0" />
+      <Item value="offset" priority="1" />
+      <Item value="readBytes" priority="1" />
+      <Item value="Convert`0" priority="1" />
+      <Item value="length" priority="0" />
+      <Item value="fileinfo" priority="5" />
+      <Item value="FileInfo" priority="1" />
+      <Item value="fi" priority="13" />
+      <Item value="Path`0" priority="2" />
+      <Item value="basePath" priority="0" />
+      <Item value="var" priority="3" />
+      <Item value="files" priority="3" />
+      <Item value="found" priority="0" />
+      <Item value="attr" priority="0" />
+      <Item value="atime" priority="0" />
+      <Item value="newname" priority="0" />
+      <Item value="freeBytesAvailable" priority="0" />
+      <Item value="ulong" priority="1" />
+      <Item value="totalBytes" priority="0" />
+      <Item value="totalFreeBytes" priority="0" />
+      <Item value="if" priority="1" />
+      <Item value="Map`0" priority="2" />
+      <Item value="dirs" priority="1" />
+      <Item value="foreach" priority="1" />
+      <Item value="FileInformation`0" priority="0" />
+      <Item value="Attributes" priority="0" />
+      <Item value="Directory" priority="0" />
+      <Item value="CreationTime" priority="0" />
+      <Item value="DateTime`0" priority="3" />
+      <Item value="FileName" priority="0" />
+      <Item value="dir" priority="1" />
+      <Item value="LastAccessTime" priority="0" />
+      <Item value="LastWriteTime" priority="0" />
+      <Item value="Length" priority="1" />
+      <Item value="DirectoryInfo`0" priority="0" />
+      <Item value="DirectoryInfo" priority="0" />
+      <Item value="di" priority="4" />
+      <Item value="string" priority="4" />
+      <Item value="this" priority="5" />
+      <Item value="filePath" priority="6" />
+      <Item value="public" priority="0" />
+      <Item value="void" priority="0" />
+      <Item value="Dictionary" priority="0" />
+      <Item value="byte" priority="1" />
+      <Item value="cacheRepository" priority="0" />
+      <Item value="FileAccess" priority="0" />
+      <Item value="Data" priority="0" />
+      <Item value="data" priority="1" />
+      <Item value="LastAccess" priority="0" />
+      <Item value="MemoryStream`0" priority="0" />
+      <Item value="Console`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Create`0" priority="0" />
+      <Item value="OpenRead`0" priority="0" />
+      <Item value="SetAttributes`0" priority="0" />
+      <Item value="SetLastAccessTime`0" priority="0" />
+      <Item value="SetCreationTime`0" priority="0" />
+      <Item value="SetLastWriteTime`0" priority="0" />
+      <Item value="Delete`0" priority="0" />
+      <Item value="Move`0" priority="0" />
+      <Item value="Exists`0" priority="0" />
+      <Item value="ReadAllBytes`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="CreateDirectory`0" priority="0" />
+      <Item value="GetFileSystemEntries`0" priority="0" />
+      <Item value="Delete`0" priority="0" />
+      <Item value="GetFiles`0" priority="0" />
+      <Item value="GetDirectories`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileInfo">
+      <Item value="OpenRead`0" priority="0" />
+      <Item value="Length" priority="1" />
+      <Item value="Attributes" priority="1" />
+      <Item value="CreationTime" priority="1" />
+      <Item value="FullName" priority="1" />
+      <Item value="LastAccessTime" priority="1" />
+      <Item value="LastWriteTime" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Read`0" priority="0" />
+      <Item value="Write`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Dokan.FileInformation">
+      <Item value="Length" priority="0" />
+      <Item value="Attributes" priority="0" />
+      <Item value="CreationTime" priority="0" />
+      <Item value="FileName" priority="0" />
+      <Item value="LastAccessTime" priority="0" />
+      <Item value="LastWriteTime" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ArrayList">
+      <Item value="AddRange`0" priority="1" />
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.UInt64">
+      <Item value="MaxValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.DirectoryInfo">
+      <Item value="Attributes" priority="0" />
+      <Item value="CreationTime" priority="0" />
+      <Item value="FullName" priority="0" />
+      <Item value="LastAccessTime" priority="0" />
+      <Item value="LastWriteTime" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetFileName`0" priority="1" />
+      <Item value="GetDirectoryName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Concat`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="ToFileTime`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:CacheDrive.CachingFileSystem">
+      <Item value="WriteCacheSummary`0" priority="0" />
+      <Item value="cache" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:CacheDrive.CacheRepositry">
+      <Item value="WriteSummary`0" priority="0" />
+      <Item value="cacheRepository" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="0" />
+      <Item value="ContainsKey`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:CacheDrive.FileAccess">
+      <Item value="Data" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

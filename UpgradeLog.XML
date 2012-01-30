@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CacheDrive">
+</Property><Property Name="Solution File" Value="c:\users\smueller\documents\visual studio 2010\Projects\CacheDrive\CacheDrive.sln">
+</Property><Property Name="Date" Value="Montag, 2. Mai 2011">
+</Property><Property Name="Time" Value="11:45:58">
+</Property></Properties><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\DokanNet.csproj" Description="Project file successfully backed up as c:\users\smueller\documents\visual studio 2010\Projects\CacheDrive\Backup\DokanNet.csproj">
+</Event><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\DokanNet.cs" Description="File successfully backed up as c:\users\smueller\documents\visual studio 2010\Projects\CacheDrive\Backup\DokanNet.cs">
+</Event><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\DokanOperations.cs" Description="File successfully backed up as c:\users\smueller\documents\visual studio 2010\Projects\CacheDrive\Backup\DokanOperations.cs">
+</Event><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\Properties\AssemblyInfo.cs" Description="File successfully backed up as c:\users\smueller\documents\visual studio 2010\Projects\CacheDrive\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\Proxy.cs" Description="File successfully backed up as c:\users\smueller\documents\visual studio 2010\Projects\CacheDrive\Backup\Proxy.cs">
+</Event><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\DokanNet.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="DokanNet" Source="DokanNet\DokanNet.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DokanNet" Source="DokanNet\DokanNet.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

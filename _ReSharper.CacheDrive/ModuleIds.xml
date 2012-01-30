@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="0F8EEE61-877B-4593-A32D-44E818015C18" ModuleId="CacheDrive" />
+  <Module PersistentId="A09B408A-26A0-4FF8-83D5-6E1B1DA5F63C" ModuleId="DokanNet" />
+</Modules>

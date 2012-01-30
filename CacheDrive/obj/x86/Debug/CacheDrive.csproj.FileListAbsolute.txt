@@ -1,0 +1,7 @@
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\obj\x86\Debug\CacheDrive.exe
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\obj\x86\Debug\CacheDrive.pdb
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\bin\Debug\CacheDrive.exe
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\bin\Debug\CacheDrive.pdb
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\bin\Debug\DokanNet.dll
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\bin\Debug\DokanNet.pdb
+C:\Users\smueller\Documents\Visual Studio 2010\Projects\CacheDrive\CacheDrive\obj\x86\Debug\ResolveAssemblyReference.cache
