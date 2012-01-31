@@ -2,3 +2,5 @@ This is an attempt to write a CacheDrive in .NET
 It you can immagine it like a RamDrive, but it wraps around a real filesystem, so you don't have to copy files around. It expands the readcache (which is build into every drive) using the memory of your computer.
 
 It is work in progress...
+
+LICENSE: This Project stands under the GPL III
