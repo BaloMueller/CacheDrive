@@ -1,6 +1,14 @@
-This is an attempt to write a CacheDrive in .NET
-It you can immagine it like a RamDrive, but it wraps around a real filesystem, so you don't have to copy files around. It expands the readcache (which is build into every drive) using the memory of your computer.
+The idea of the Cachedrive is, to have a something like a Ramdisk but with more comfort. A ramdisk is something like a virtual hard drive, which all of the stored files are only stored in memory. But – as you probably know -  every time you reboot your PC all the data in the memory are lost. So always after a new boot, you have to copy the files to the ramdisk.
 
-It is work in progress...
+With the cachedrive I want to solve this issue and took another approach. I wrap a real physical harddrive with a caching layer. So every first read to a file is as slow as your harddrive is. But the data is cached, so every other access to that file is very fast, because the data is read from memory.
+
+Technically I work on the user mode filesystem layer, like for example Antivirus applications do. Because this layer has direct connections to the Windows Kernel, it is written in unmanaged code. To get access from C# I used the Dokan.NET Library from Hiroki Asakawa.
+
+Actually the project is not finished. I proved that it could work, than I lost the motivation… Mostly there are some bugs waiting for fixing, functional “it should work”. A new version of the Dokan.NET Library is released and should be used.
+
+Please, please, please give me feedback and I would be very glad if you fork the project and make some improvement. 
+Maybe I get rich very soon, quit my job and have the time to resume development.
+
+<a href="http://blog.pimmelpammel.de/2012/02/cachdrive/">More information at my blog</a>
 
 LICENSE: This Project stands under the GPL III
