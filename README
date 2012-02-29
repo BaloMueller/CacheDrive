@@ -1,4 +1,4 @@
-The idea of the Cachedrive is, to have a something like a Ramdisk but with more comfort. A ramdisk is something like a virtual hard drive, which all of the stored files are only stored in memory. But – as you probably know -  every time you reboot your PC all the data in the memory are lost. So always after a new boot, you have to copy the files to the ramdisk.
+<html>The idea of the Cachedrive is, to have a something like a Ramdisk but with more comfort. A ramdisk is something like a virtual hard drive, which all of the stored files are only stored in memory. But – as you probably know -  every time you reboot your PC all the data in the memory are lost. So always after a new boot, you have to copy the files to the ramdisk.
 
 With the cachedrive I want to solve this issue and took another approach. I wrap a real physical harddrive with a caching layer. So every first read to a file is as slow as your harddrive is. But the data is cached, so every other access to that file is very fast, because the data is read from memory.
 
@@ -11,4 +11,4 @@ Maybe I get rich very soon, quit my job and have the time to resume development.
 
 <a href="http://blog.pimmelpammel.de/2012/02/cachdrive/">More information at my blog</a>
 
-LICENSE: This Project stands under the GPL III
+LICENSE: This Project stands under the GPL III</html>
